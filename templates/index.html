@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        /* Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3a7ca5;
+            color: white;
+            text-align: center;
+        }
+        .weather-container {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px;
+            background-color: #1cc88a;
+            color: white;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter City">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if city %}
+    <div class="weather-container">
+        <h2>Weather in {{ city }}</h2>
+        <p>Condition: {{ condition }}</p>
+        <p>Temperature: {{ temp }}°C</p>
+        <p>Min Temp: {{ min_temp }}°C</p>
+        <p>Max Temp: {{ max_temp }}°C</p>
+        <p>Pressure: {{ pressure }} hPa</p>
+        <p>Humidity: {{ humidity }}%</p>
+        <p>Wind Speed: {{ wind }} m/s</p>
+        <p>Sunrise: {{ sunrise }}</p>
+        <p>Sunset: {{ sunset }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
